@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+<textarea id="a"> kkkk</textarea>
+<table id ="ta" border="1">
+<tr>
+<td></td>
+</tr>
+</table>
+<p>Click the button to loop from 1 to 6, to make HTML headings.</p>
+<button onclick="myFunction()">Try it</button>
+
+
+<script>
+
+function myFunction() {
+    var x ="", i;
+    var k =  document.getElementById("a").value;
+    
+    for (i=1; i<=6; i++) {
+   
+      x = x + "<tr><td>" + i + " "+ k + "</td> </tr>" ; 
+    }
+     
+    document.getElementById("ta").innerHTML = x;
+  
+  
+
+}
+</script>
+
+</body>
+</html>
