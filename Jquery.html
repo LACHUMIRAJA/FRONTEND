@@ -1,0 +1,172 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+<title>JQuery</title>  
+<h1> JQuery Examples </h1>
+
+<h4 id="m1">  MOUSEOVER </h4>  <h4 id="m2"> TOGGLE </h4>
+ <h4 id="m4"> SLIDE TOGGLE  </h4>
+<h4 id="m5">  SERIALIZE </h4>  <h4 id="m6"> MOUSE EVENT  </h4> <h4>  MENU 7 </h4>  <h4> MENU 8 </h4>
+
+
+
+
+
+
+
+
+
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">  
+ </script>  
+ <script type="text/javascript" language="javascript">  
+
+ 
+
+ $(document).ready(function() {  
+
+   $("button").click(function(){  
+        $("div").show().animate({left: '450px'});  
+    });  
+
+	$("#m1").mouseover(function(){  
+
+		 $("#m1").css("background-color", "lightgreen");   });  
+
+	$("#m1").mouseout(function(){  
+		 $("#m1").css("background-color", "white");  });
+
+	$("#m2").click(function(){
+		$("#p4").toggle();  });
+
+	$("#m4").click(function(){  
+        $("#p5").slideToggle("slow");    });  
+
+
+	$("#m5").click(function(){  
+	$("form").show();
+	
+	$("#h1").hide();
+	$("#szb").show();
+	
+	$("input").keydown(function(){  
+        $("input").css("background-color", "green");     });  
+	$("input").keyup(function(){  
+        $("input").css("background-color", "violet");  
+    });  
+
+
+	 $("button").click(function(){  
+        var x = ($("form").serializeArray());
+
+
+	
+	$.each(x, function(i, field){  
+	$("div2").append(" "+field.name + ":" + field.value + "   ");
+}); 
+		
+	
+});  
+
+});
+
+$("#m6").mouseenter(function(){    
+       $( "h2" ).text( "Mouse entered on heading" ).show().fadeOut( 2000 );   
+    });    
+
+
+});
+ </script>  
+
+
+<style>
+
+h4{
+color: green;
+margin:70px; 
+float:left;
+
+ }
+ 
+h1{
+color: red;
+background-color: black;
+padding: 50px;
+padding-left: 800px;
+padding-right: 800px;
+align:center;
+}
+
+
+h2,p{
+color: green;
+background-color: white;
+padding-top: 100px;
+padding-left: 800px;
+padding-right: 800px;
+align:center;
+}
+
+
+#p4,#p5 {  
+    color:red;
+    display: none;  
+}  
+
+form {  
+    color:green;
+    display: none;  
+}  
+
+ div {
+padding-top: 100px;
+padding-left: 400px;
+
+}
+
+form{
+padding-top: 250px;
+
+}
+
+#szb,div{
+display:none;
+align : center;
+}
+
+
+
+
+</style>
+
+ </head>  
+<body> 
+
+<button id="h1">  Animate </button> 
+
+
+
+
+<h2> </h2>
+
+
+<p id="p4"> Toggle Is Selected </p>
+<p id="p5"> SlideToggle Is Selected </p>
+
+
+<div style="position:absolute;">
+<p> Animate Is Selected </p>
+</div>
+
+<form action="">
+ First name: <input type="text" name="FirstName"><br>  <br>
+  Age: <input type="text" name="Age"><br>  <br>
+
+
+
+</form>
+
+<button id="szb" align="center"> Click  Serialize </button>
+
+<div2></div2>
+</body>  
+</html>  
